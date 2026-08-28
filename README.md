@@ -1,4 +1,4 @@
-Planning to host multiple python scripts here to analyze different parameters of different cricket tournaments by getting the input data from https://cricsheet.org/.
+Planning to host multiple python scripts here to analyze different data of different cricket tournaments from 01-01-2020 to present by getting the input data from https://cricsheet.org/ .
 
 List of scripts currently completed:
 -> avg_scores.py to fetch and filter avg score by venue.
