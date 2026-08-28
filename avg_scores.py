@@ -29,10 +29,11 @@ for i in os.listdir(folder):
     except KeyError:
         venue_stats[venue]=[first_inn_score, 1]
     
-for entries in venue_stats.items():
-    venue, stats=entries
-    avg_score=stats[0]/stats[1]
-    with open("avg_scores/"+target_file, "w", newline="") as f:
+
+with open("avg_scores/"+target_file, "w", newline="") as f:
+        for entries in venue_stats.items():
+            venue, stats=entries
+            avg_score=stats[0]/stats[1]
         writer=csv.writer(f)
         writer.writerow(["Venue", "Average Score"])
         for entries in venue_stats.items():
