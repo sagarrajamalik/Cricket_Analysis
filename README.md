@@ -5,7 +5,7 @@ List of scripts currently completed:
 
 
 Input data : Ball by Ball data of concerned tournament from https://cricsheet.org/ in JSON format.
-Output data : CSV file with Venue and Avg_score columns.
+Output data : CSV file with concerned filters and parameters.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 REQUIREMENTS.TXT
