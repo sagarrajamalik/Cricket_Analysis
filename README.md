@@ -8,11 +8,14 @@ Input data : Ball by Ball data of concerned tournament from https://cricsheet.or
 Output data : CSV file with concerned filters and parameters.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
-REQUIREMENTS.TXT
-csv
-json
-os
-datetime
+## Dependencies
+
+| Module | Type | Description |
+| :--- | :--- | :--- |
+| `os` | Standard Library | File path and directory navigation |
+| `json` | Standard Library | Parsing Cricsheet match datasets |
+| `datetime` | Standard Library | Filtering matches by date |
+| `csv` | Standard Library | Exporting calculated averages to CSV |
 
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
