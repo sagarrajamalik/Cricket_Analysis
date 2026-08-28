@@ -6,12 +6,12 @@ import datetime
 
 venue_stats={}
 matches_count={}
-folder="HundredData/hnd_male_json"
-target_file="Hundred_avg_scores.csv"
+folder="inputData/CSA20Data"
+target_file="CSA20_avg_scores.csv"
 for i in os.listdir(folder):
     with open(os.path.join(folder, i), "r") as f:
         data=json.load(f)
-    if datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2026, 1, 1):
+    if datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2000, 1, 1):
         pass
     else:
         continue
@@ -31,9 +31,6 @@ for i in os.listdir(folder):
     
 
 with open("avg_scores/"+target_file, "w", newline="") as f:
-        for entries in venue_stats.items():
-            venue, stats=entries
-            avg_score=stats[0]/stats[1]
         writer=csv.writer(f)
         writer.writerow(["Venue", "Average Score"])
         for entries in venue_stats.items():
