@@ -6,20 +6,23 @@ import datetime
 
 venue_stats={}
 matches_count={}
-folder="inputData/CSA20Data"
-target_file="CSA20_avg_scores.csv"
+folder="inputData/HundredMale"
+target_file="Hundred_avg_scores.csv"
 for i in os.listdir(folder):
     with open(os.path.join(folder, i), "r") as f:
         data=json.load(f)
-    if datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2020, 1, 1) and data["innings"][-1]["overs"]==20:
+    if (datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2020, 1, 1)):
         pass
     else:
         continue
     venue=data["info"]["venue"]
     matches_count[venue]=matches_count.get(venue, 0)+1
-
     try:
         first_inn_score=data["innings"][-1]["target"]["runs"]-1
+        if data["innings"][-1]["target"]["overs"] == 20:
+            pass
+        else:
+            continue
     except KeyError:
         continue
 
