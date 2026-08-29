@@ -11,7 +11,7 @@ target_file="CSA20_avg_scores.csv"
 for i in os.listdir(folder):
     with open(os.path.join(folder, i), "r") as f:
         data=json.load(f)
-    if datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2000, 1, 1):
+    if datetime.datetime.strptime(data["info"]["dates"][0], "%Y-%m-%d") >= datetime.datetime(2020, 1, 1) and data["innings"][-1]["overs"]==20:
         pass
     else:
         continue
